@@ -22,12 +22,14 @@
                             <label for="petName" class="col-form-label">Pet Name</label> <input type="text" th:field="*{petName}" class="form-control" id="petName" placeholder="Pet Name"> <span th:if="${#fields.hasErrors('petName')}" th:errors="*{petName}" class="text-danger"></span>
                         </div>
                         <div class="form-group col-md-8">
-                            <label for="petKind" class="col-form-label">Email</label> <input type="text" th:field="*{petKind}" class="form-control" id="petKind" placeholder="Pet Kind"> <span th:if="${#fields.hasErrors('petKind')}" th:errors="*{petKind}" class="text-danger"></span>
+                            <label for="petKind" class="col-form-label">Kind</label> <input type="text" th:field="*{petKind}" class="form-control" id="petKind" placeholder="Pet Kind"> <span th:if="${#fields.hasErrors('petKind')}" th:errors="*{petKind}" class="text-danger"></span>
                         </div>
                         <div class="form-group col-md-8">
                             <label for="petGender" class="col-form-label">Pet Gender</label> <input type="text" th:field="*{petGender}" class="form-control" id="petGender" placeholder="Pet Gender"> <span th:if="${#fields.hasErrors('petGender')}" th:errors="phoneNo" class="text-danger"></span>
                         </div>
-
+                        <div class="form-group col-md-8">
+                            <label for="petGender" class="col-form-label">Pet Vaccination</label> <input type="text" th:field="*{petVaccination}" class="form-control" id="petVaccination" placeholder="pet Vaccination"> <span th:if="${#fields.hasErrors('petVaccination')}" th:errors="phoneNo" class="text-danger"></span>
+                        </div>
                         <div class="form-group col-md-8">
                             <input type="submit" class="btn btn-primary" value="Update Pet">
                         </div>

@@ -26,6 +26,14 @@ public class Pet {
     public Pet() {
     }
 
+    public Pet(long id, @NotBlank(message = "Name is mandatory") String petName, String petKind, String petGender, String petVaccination) {
+        this.id = id;
+        this.petName = petName;
+        this.petKind = petKind;
+        this.petGender = petGender;
+        this.petVaccination = petVaccination;
+    }
+
     public long getId() {
         return id;
     }
@@ -39,7 +47,7 @@ public class Pet {
     }
 
     public void setPetName(String petName) {
-        petName = petName;
+        this.petName = petName;
     }
 
     public String getPetKind() {
@@ -70,7 +78,7 @@ public class Pet {
     public String toString() {
         return "Pet{" +
                 "id=" + id +
-                ", PetName='" + petName + '\'' +
+                ", petName='" + petName + '\'' +
                 ", petKind='" + petKind + '\'' +
                 ", petGender='" + petGender + '\'' +
                 ", petVaccination='" + petVaccination + '\'' +

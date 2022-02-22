@@ -23,16 +23,28 @@ public class PetController {
         this.petRepository = petRepository;
     }
 
+    @GetMapping("list")
+    public String listAllPets(Model model){
+        Pet pet1 =new Pet(1,"pet1","dog","male","not vaccinated");
+        Pet pet2 =new Pet(2,"pet2","cat","female","vaccinated");
+        Pet pet3 =new Pet(3,"pet3","cat","male","vaccinated");
+        Pet pet4 =new Pet(4,"pet4","dog","female","vaccinated");
+
+        petRepository.save(pet1);
+        petRepository.save(pet2);
+        petRepository.save(pet3);
+        petRepository.save(pet4);
+        model.addAttribute("pets",petRepository.findAll());
+
+        return "index";
+    }
+
+
     @GetMapping("show")
     public String showAddPetForm(Pet pet){
         return "add-pet";
     }
 
-    @GetMapping("list")
-    public String listAllPets(Model model){
-        model.addAttribute("pets",petRepository.findAll());
-        return "index";
-    }
 
     @PostMapping("add")
     public String addPet(@Valid Pet pet, BindingResult result,
@@ -67,10 +79,10 @@ public class PetController {
 
     @GetMapping("delete/{id}")
     public String deletePet(@PathVariable("id") long id, Model model) {
-        Pet student = petRepository.findById(id)
-                .orElseThrow(()-> new IllegalArgumentException("Invalid student Id:" + id));
-        petRepository.delete(student);
-        model.addAttribute("students", petRepository.findAll());
+        Pet pet = petRepository.findById(id)
+                .orElseThrow(()->new IllegalArgumentException("Invalid student Id:" + id));
+        petRepository.delete(pet);
+        model.addAttribute("pets", petRepository.findAll());
         return "index";
     }
 }

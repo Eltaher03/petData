@@ -20,7 +20,9 @@
                 <form action="#" th:action="@{/pets/add}" th:object="${pet}" method="post">
                     <div class="row">
                         <div class="form-group col-md-8">
-                            <label for="petName" class="col-form-label">Name</label> <input type="text" th:field="*{petName}" class="form-control" id="petName" placeholder="Pet Name"> <span th:if="${#fields.hasErrors('petName')}" th:errors="*{petName}" class="text-danger"></span>
+                            <label for="petName" class="col-form-label">Name</label>
+                            <input type="text" th:field="*{petName}" class="form-control" id="petName" placeholder="Pet Name">
+                            <span th:if="${#fields.hasErrors('petName')}" th:errors="*{petName}" class="text-danger"></span>
                         </div>
                         <div class="form-group col-md-8">
                             <label class="col-form-label">Pet Kind</label>
@@ -34,18 +36,21 @@
 
                         <div class="form-group col-md-8">
                                     <label>Gender</label>
-                                    <input type = "radio" name = "gender" th:field = "*{petGender}" value = "male" />
+                            <div><input type="radio" name ="gender" th:field="*{petGender}" value= "male" /></div>
                                     <label>Male</label>
-                                    <input type = "radio" name = "gender" th:field = "*{petGender}" value = "female" th:checked="${true}"/>
-                                    <label>Women</label>
+                                    <div><input type="radio" name="gender"  th:field="*{petGender}" value= "female" checked="checked"/></div>
+                                    <label>Female</label>
 
                         </div>
                         <div class="form-group col-md-8">
                             <label>Pet Vaccinated</label>
-                            <input type="checkbox" th:field="*{petVaccination}" value="Vaccinated" />
+                            <div> <input type="checkbox"  value="Vaccinated" th:field="*{petVaccination}"/></div>
                             <label>Pet Not Vaccinated</label>
-                            <input type="checkbox" th:field="*{petVaccination}" value="Not Vaccinated" />
+                                <div><input type="checkbox"  value="Not Vaccinated" checked="checked" th:field="*{petVaccination}"/></div>
                         </div>
+
+
+
 
                         <div class="col-md-6">
                             <input type="submit" class="btn btn-primary" value="Add Pet">

@@ -26,6 +26,7 @@
                         <table class="table table-striped table-responsive-md">
                             <thead>
                             <tr>
+                                <th>Id</th>
                                 <th>Name</th>
                                 <th>Kind</th>
                                 <th>Gender</th>
@@ -36,7 +37,8 @@
                             </thead>
                             <tbody>
                             <tr th:each="pet : ${pets}">
-                                <td th:text="${pet.petName}"></td>
+                                <td th:text="${pet.getId()}"></td>
+                                <td th:text="${pet.getPetName()}"></td>
                                 <td th:text="${pet.petKind}"></td>
                                 <td th:text="${pet.petGender}"></td>
                                 <td th:text="${pet.petVaccination}"></td>
