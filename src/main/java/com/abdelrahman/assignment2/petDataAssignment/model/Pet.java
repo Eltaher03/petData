@@ -12,7 +12,7 @@ public class Pet {
 
     @NotBlank(message = "Name is mandatory")
     @Column(name = "Name")
-    private String PetName;
+    private String petName;
 
     @Column(name = "Kind")
     private String petKind;
@@ -35,11 +35,11 @@ public class Pet {
     }
 
     public String getPetName() {
-        return PetName;
+        return petName;
     }
 
     public void setPetName(String petName) {
-        PetName = petName;
+        petName = petName;
     }
 
     public String getPetKind() {
@@ -70,7 +70,7 @@ public class Pet {
     public String toString() {
         return "Pet{" +
                 "id=" + id +
-                ", PetName='" + PetName + '\'' +
+                ", PetName='" + petName + '\'' +
                 ", petKind='" + petKind + '\'' +
                 ", petGender='" + petGender + '\'' +
                 ", petVaccination='" + petVaccination + '\'' +

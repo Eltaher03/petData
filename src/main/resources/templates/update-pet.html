@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>Update Pet</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css" integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz" crossorigin="anonymous">
+</head>
+
+<body>
+<div class="container my-5">
+    <h3> Update Student</h3>
+    <div class="card">
+        <div class="card-body">
+            <div class="col-md-8">
+                <form action="#" th:action="@{/pets/update/{id}(id=${pet.id})}" th:object="${pet}" method="post">
+                    <div class="row">
+                        <div class="form-group col-md-6">
+                            <label for="petName" class="col-form-label">Pet Name</label> <input type="text" th:field="*{petName}" class="form-control" id="petName" placeholder="Pet Name"> <span th:if="${#fields.hasErrors('petName')}" th:errors="*{petName}" class="text-danger"></span>
+                        </div>
+                        <div class="form-group col-md-8">
+                            <label for="petKind" class="col-form-label">Email</label> <input type="text" th:field="*{petKind}" class="form-control" id="petKind" placeholder="Pet Kind"> <span th:if="${#fields.hasErrors('petKind')}" th:errors="*{petKind}" class="text-danger"></span>
+                        </div>
+                        <div class="form-group col-md-8">
+                            <label for="petGender" class="col-form-label">Pet Gender</label> <input type="text" th:field="*{petGender}" class="form-control" id="petGender" placeholder="Pet Gender"> <span th:if="${#fields.hasErrors('petGender')}" th:errors="phoneNo" class="text-danger"></span>
+                        </div>
+
+                        <div class="form-group col-md-8">
+                            <input type="submit" class="btn btn-primary" value="Update Pet">
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+
+</html>

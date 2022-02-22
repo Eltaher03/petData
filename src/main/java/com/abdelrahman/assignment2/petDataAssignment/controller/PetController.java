@@ -25,7 +25,7 @@ public class PetController {
 
     @GetMapping("show")
     public String showAddPetForm(Pet pet){
-        return "addPet";
+        return "add-pet";
     }
 
     @GetMapping("list")
@@ -61,7 +61,7 @@ public class PetController {
         }
 
         petRepository.save(pet);
-        model.addAttribute("students", petRepository.findAll());
+        model.addAttribute("pets", petRepository.findAll());
         return "index";
     }
 
